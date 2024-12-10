@@ -1,0 +1,91 @@
+{% extends 'bookmarks/base.html' %}
+
+{% block content %}
+
+<style>
+    /* General Styling */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    form {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    /* Form Inputs */
+    form input[type="text"], form input[type="url"], form input[type="submit"], form button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    /* Button Styles */
+    button, input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover, input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+
+    /* Alert Messages */
+    .alert {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .alert-success {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .alert-error {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>
+
+<h2>{% if form.instance.pk %}Edit{% else %}Add{% endif %} Bookmark</h2>
+
+<!-- Display error or success messages -->
+{% if messages %}
+    <div>
+        {% for message in messages %}
+            <p class="alert {% if message.tags == 'error' %}alert-error{% elif message.tags == 'success' %}alert-success{% endif %}">
+                {{ message }}
+            </p>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Form for Adding or Editing Bookmark -->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <!-- Submit Button -->
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarking Site</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .nav-left,
+        nav .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        .welcome-message {
+            color: #f1f1f1;
+            font-size: 14px;
+            margin-right: 15px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            max-width: 100%%;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        main h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha384-o+a8U4NMA5RxQpTBWQgpRfp1ZxQxQwDxUJ1Ro6AeGqOOVfg7N3k8tWrPIH8W9FLa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <a href="{% url 'home' %}">Home</a>  <!-- Home link added here -->
+            <a href="{% url 'bookmark_list' %}">Bookmark List</a>
+            <a href="{% url 'add_bookmark' %}">Add Bookmark</a>
+        </div>
+        <div class="nav-right">
+            {% if user.is_authenticated %}
+                <span class="welcome-message">Welcome, {{ user.username }}</span>
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'signup' %}">Signup</a>
+                <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Bookmarking Site. All Rights Reserved.
+    </footer>
+</body>
+</html>
