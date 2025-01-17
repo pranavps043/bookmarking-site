@@ -21,9 +21,12 @@
 
   <h2 style="color: #4CAF50;">🛠️ Tech Stack</h2>
   <ul>
-    <li><strong>Frontend:</strong> HTML, CSS, Bootstrap</li>
+    <li><strong>Frontend:</strong><br> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>,<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/>,
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>l
+
+</li>
     <li><strong>Backend:</strong> Django Framework</li>
-    <li><strong>Database:</strong> MySQL</li>
+    <li><strong>Database:</strong><br> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </li>
   </ul>
 
  
