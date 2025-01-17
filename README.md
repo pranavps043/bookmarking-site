@@ -33,7 +33,7 @@
 
   <h2 style="color: #4CAF50;">👨‍💻 Developer</h2>
   <p><strong>Name:</strong> Pranav P.S.<br>
-  <strong>Email:</strong> <a href="mailto:your-email@example.com">pranavps043@gmail.com</a><br>
+  <strong>Email:</strong> <a href="pranavps043@gmail.comm">pranavps043@gmail.com</a><br>
 
 
 </body>
